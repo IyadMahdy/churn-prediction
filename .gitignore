@@ -206,9 +206,12 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Data
-data/raw/
-data/external/
+# Ignore contents, keep folders
+data/raw/*
+data/external/*
+models/trained/*
 
-# Models
-models/trained/
+# But keep gitkeep files
+!data/raw/.gitkeep
+!data/external/.gitkeep
+!models/trained/.gitkeep
