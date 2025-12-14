@@ -216,6 +216,3 @@ models/trained/*
 !data/processed/.gitkeep
 !data/external/.gitkeep
 !models/trained/.gitkeep
-
-# pyrpoject.toml formatting
-*.toml

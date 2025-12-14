@@ -20,9 +20,7 @@ def load_raw_data(filename: str) -> pd.DataFrame:
     return pd.read_csv(file_path)
 
 
-def validate_data(
-    df: pd.DataFrame, required_columns: list | None = None
-) -> None:
+def validate_data(df: pd.DataFrame, required_columns: list | None = None) -> None:
     """Validate that the DataFrame contains the required
         columns.
 
