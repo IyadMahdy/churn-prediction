@@ -208,10 +208,12 @@ __marimo__/
 
 # Ignore contents, keep folders
 data/raw/*
+data/processed/*
 data/external/*
 models/trained/*
 
 # But keep gitkeep files
 !data/raw/.gitkeep
+!data/processed/.gitkeep
 !data/external/.gitkeep
 !models/trained/.gitkeep
