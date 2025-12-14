@@ -1,22 +1,24 @@
-# 📊 Sales / Customer Churn Prediction with ML & Automation
+# 📊 Customer Churn Prediction with ML & Automation
 
 ## 📌 Project Overview
-This project focuses on building a predictive machine learning system to forecast:
-- Customer churn
-- Product sales
-- Subscription renewal likelihood
 
-The system is designed as an end-to-end automated pipeline from data ingestion to reporting.
+This project focuses on building a predictive machine learning system to **identify customers at risk of churn**.
+
+The goal is to predict whether a customer is likely to leave a service based on historical behavior and customer attributes.
+The system is designed as an **end-to-end automated ML pipeline**, covering data ingestion, preprocessing, modeling, evaluation, and reporting.
 
 ---
 
 ## 🎯 Business Problem & Impact
-Businesses often struggle to identify customers at risk of leaving or predict future sales accurately.
 
-**This project helps to:**
-- Identify high-risk customers early
-- Optimize retention strategies
-- Support data-driven decision-making
+Customer churn is a critical challenge for subscription-based and service-driven businesses, as acquiring new customers is often more expensive than retaining existing ones.
+
+**This project helps businesses to:**
+
+* Identify high-risk customers before they churn
+* Take proactive retention actions
+* Improve customer lifetime value
+* Support data-driven decision-making
 
 ---
 
@@ -79,14 +81,65 @@ sales-churn-prediction/
 * Power BI / Python Dashboards
 * Git & GitHub
 
----
-
 ## ⚙️ Setup & Installation
 
-* Python 3.9+ is recommended.
+### 🔹 Python Version
+
+This project uses **Python 3.11**.
+Make sure Python **3.11.x** is installed on your system before proceeding.
+
+---
+
+### 🔹 Clone the Repository
+
 ```bash
-git clone <repo-url>
+git clone https://github.com/IyadMahdy/churn-prediction.git
 cd project-folder
+```
+
+---
+
+### 🔹 Create a Virtual Environment
+
+Create a virtual environment using Python 3.11:
+
+```bash
+py -3.11 -m venv venv
+```
+
+> Using a virtual environment is **strongly recommended** to isolate project dependencies.
+
+---
+
+### 🔹 Activate the Virtual Environment
+
+**On Windows (PowerShell):**
+
+```powershell
+venv\Scripts\Activate.ps1
+```
+
+**On Windows (Command Prompt):**
+
+```cmd
+venv\Scripts\activate.bat
+```
+
+**On Linux / macOS:**
+
+```bash
+source venv/bin/activate
+```
+
+After activation, your terminal should show the virtual environment name.
+
+---
+
+### 🔹 Install Dependencies
+
+Once the virtual environment is activated, install the required packages:
+
+```bash
 pip install -r requirements.txt
 ```
 

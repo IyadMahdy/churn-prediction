@@ -16,7 +16,7 @@ We follow a simple branching workflow:
 - `dev`  
   Active development branch where features are integrated.
 
-- `feature-*`  
+- `feature/*`  
   Individual feature branches created from `dev`.  
   Each task or improvement should have its own feature branch.
 
@@ -24,37 +24,121 @@ We follow a simple branching workflow:
 
 ## 🔄 Development Workflow
 
+### 1️⃣ Start Development
+
 1. Make sure you are on the `dev` branch and up to date:
+
    ```bash
    git checkout dev
    git pull
    ```
 
-2. Create a new feature branch:
+2. Create a new feature branch from `dev`:
 
    ```bash
-   git checkout -b feature-your-feature-name
+   git checkout -b feature/your-feature-name
    ```
 
-3. Work on your changes locally.
+3. (If applicable) Activate the virtual environment:
 
-4. Commit your changes with a clear message:
+   * **Windows (PowerShell):**
+
+     ```powershell
+     venv\Scripts\Activate.ps1
+     ```
+
+   * **Linux / macOS:**
+
+     ```bash
+     source venv/bin/activate
+     ```
+
+---
+
+### 2️⃣ Implement Changes
+
+4. Work on your changes locally.
+
+5. Commit your changes with a clear message:
 
    ```bash
    git add .
    git commit -m "Describe your change clearly"
    ```
 
-5. Push the feature branch to GitHub:
+6. Ensure all dependencies are captured:
 
    ```bash
-   git push -u origin feature-your-feature-name
+   pip freeze > requirements.txt
    ```
 
-6. Open a Pull Request from your feature branch to `dev`.
+---
 
-7. Ensure CI checks (Black & Flake8) pass before requesting a merge.
+### 3️⃣ Open Pull Request
 
+7. Push the feature branch to GitHub:
+
+   ```bash
+   git push -u origin feature/your-feature-name
+   ```
+
+8. Ensure CI checks (Black & Flake8) pass before requesting a merge.
+
+9. Open a Pull Request from your feature branch to `dev`.
+
+---
+
+### 🔁 Handling Pull Request Feedback
+
+If changes are requested during code review:
+
+1. Stay on the **same feature branch**:
+
+   ```bash
+   git checkout feature/your-feature-name
+   ```
+
+2. Apply the requested changes locally.
+
+3. Commit the updates:
+
+   ```bash
+   git add .
+   git commit -m "Address PR feedback"
+   ```
+
+4. Push the updates to GitHub:
+
+   ```bash
+   git push
+   ```
+
+> The existing Pull Request will be updated automatically.
+> **Do not create a new branch or a new Pull Request for review fixes.**
+
+---
+
+### 🧹 Branch Cleanup (After Merge)
+
+After the Pull Request is approved and merged:
+
+1. Switch back to `dev`:
+
+   ```bash
+   git checkout dev
+   ```
+
+2. Delete the local feature branch:
+
+   ```bash
+   git branch -d feature/your-feature-name
+   ```
+
+3. Delete the remote feature branch:
+
+   ```bash
+   git push origin --delete feature/your-feature-name
+   ```
 
 ---
 
