@@ -22,6 +22,18 @@ Customer churn is a critical challenge for subscription-based and service-driven
 
 ---
 
+## Dataset
+This project uses the IBM Telco Customer Churn dataset.
+
+- Problem type: Binary classification (customer churn prediction)
+- Target variable: Churn (Yes / No)
+- One row represents one customer
+- Features include demographics, subscribed services, and billing information
+
+Detailed dataset documentation can be found in `data/README.md`.
+
+---
+
 ## 🧠 ML Approach
 - Structured data ingestion & preprocessing
 - Feature engineering using reusable modules
