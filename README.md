@@ -8,7 +8,8 @@ This project focuses on building a predictive machine learning system to
 The goal is to predict whether a customer is likely to leave a service based on
 historical behavior and customer attributes. The system is designed as an
 **end-to-end automated ML pipeline**, covering data ingestion, validation,
-exploratory analysis, preprocessing, modeling, evaluation, and reporting.
+exploratory analysis, preprocessing, feature preparation, modeling, evaluation,
+and reporting.
 
 ---
 
@@ -44,17 +45,18 @@ Detailed dataset documentation can be found in `data/README.md`.
 
 - Structured data ingestion with schema validation
 - Exploratory Data Analysis (EDA) to inform preprocessing decisions
-- Robust numeric and categorical data cleaning
-- Feature engineering using reusable modules
+- Numeric data cleaning with preserved observations
+- Categorical data inspection, validation, and encoding
+- Feature engineering and feature selection (in progress)
 - Handling class imbalance in churn prediction
-- Predictive modeling (classification)
+- Baseline and advanced predictive modeling (classification)
 - Model evaluation with reproducible metrics (ROC-AUC, Precision, Recall, F1)
-- Explainability and business insight generation (SHAP)
+- Explainability and business insight generation (planned)
 
-_Models to be explored:_
+_Models explored / planned:_
 
 - Logistic Regression (baseline)
-- Random Forest
+- Random Forest (baseline)
 - Gradient Boosting
 
 ---
@@ -66,22 +68,26 @@ sales-churn-prediction/
 │
 ├── data/
 │   ├── raw/                    → Original, immutable datasets
-│   ├── processed/              → Validated & cleaned data artifacts
+│   ├── processed/              → Validated, cleaned & encoded data artifacts
 │   └── external/               → External data sources
 │
-├── notebooks/                  → Exploratory analysis
+├── notebooks/                  → Exploratory analysis & validation
 │   ├── 01_eda.ipynb
 │   ├── 02_univariate_analysis.ipynb
 │   ├── 03_correlation.ipynb
-│   └── 04_feature_target_analysis.ipynb
+│   ├── 04_feature_target_analysis.ipynb
+│   ├── 05_categorical_data_cleaning.ipynb
+│   └── 06_duplicate_and_inconsistent_row_check.ipynb
 │
 ├── src/                        → Production-ready Python code
 │   ├── data/
-│   │   ├── load_data.py        → Data ingestion & validation
-│   │   └── clean_numeric.py   → Numeric data cleaning
-│   ├── features/              → Feature engineering logic
-│   ├── models/                → Training, evaluation & prediction
-│   └── utils/                 → Shared utilities & configuration
+│   │   ├── load_data.py        → Data ingestion & schema validation
+│   │   ├── clean_numeric.py   → Numeric data cleaning
+│   │   └── encode_categorical.py → Categorical feature encoding
+│   ├── features/              → Feature engineering & selection logic
+│   ├── models/                → Model training, evaluation & prediction
+│   └── utils/
+│       └── config.py           → Centralized paths & configuration
 │
 ├── models/
 │   ├── trained/               → Saved model artifacts
@@ -170,44 +176,50 @@ pip install -r requirements.txt
 
 ## ▶️ Usage
 
-- Run data ingestion and validation:
+Run the pipeline steps in order:
+
+- **Data ingestion & validation**
 
   ```bash
   python src/data/load_data.py
   ```
 
-- Run numeric data cleaning:
+- **Numeric data cleaning**
 
   ```bash
   python src/data/clean_numeric.py
   ```
 
-- Use Jupyter notebooks for exploratory analysis.
+- **Categorical feature encoding**
 
-- Production-ready pipelines are implemented under `src/`.
+  ```bash
+  python src/data/encode_categorical.py
+  ```
 
-More detailed usage instructions will be added as the project progresses.
+- Use Jupyter notebooks under `notebooks/` for exploratory analysis and data
+  validation steps.
 
----
-
-## 📊 Results _(Coming Soon)_
-
-- ROC-AUC
-- Precision
-- Recall
-- F1-score
+Further modeling and evaluation scripts are implemented under `src/models/`.
 
 ---
 
-## 🤖 Automation & Reporting _(Coming Soon)_
+## 📊 Results _(In Progress)_
 
-- Automated prediction pipeline
-- Scheduled reporting
-- Business dashboards
+- Logistic Regression baseline metrics
+- Random Forest baseline metrics
+- Comparative evaluation (ROC-AUC, Precision, Recall, F1)
+
+---
+
+## 🤖 Automation & Reporting _(Planned)_
+
+- Automated training and evaluation pipeline
+- Reproducible experiment tracking
+- Business-facing dashboards and reports
 
 ---
 
 ## 👥 Contributors
 
-- Iyad Mahdy – Team Lead
-- Ahmed Abdulhakeem
+- **Iyad Mahdy** – Team Lead / Data Science
+- **Ahmed Abdulhakeem** – Data Science
