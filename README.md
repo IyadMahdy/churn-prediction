@@ -90,8 +90,7 @@ sales-churn-prediction/
 │       └── config.py           → Centralized paths & configuration
 │
 ├── models/
-│   ├── trained/               → Saved model artifacts
-│   └── metrics/               → Model performance outputs
+│   └── logistic_regression/   → Model-specific artifacts
 │
 ├── reports/
 │   ├── figures/               → Generated plots
