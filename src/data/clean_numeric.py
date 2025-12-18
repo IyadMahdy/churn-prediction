@@ -27,7 +27,7 @@ def clean_numeric_features(
     # Convert TotalCharges to numeric
     df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
 
-    # Impute missing TotalCharges with 0 since missing values correspond to customers with no tenure
+    # Impute with 0 since missing values correspond to customers with no tenure
     df["TotalCharges"] = df["TotalCharges"].fillna(0)
 
     # Save cleaned dataset
