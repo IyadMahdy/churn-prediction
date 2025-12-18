@@ -27,9 +27,8 @@ def clean_numeric_features(
     # Convert TotalCharges to numeric
     df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
 
-    # Impute missing TotalCharges using median
-    median_total_charges = df["TotalCharges"].median()
-    df["TotalCharges"] = df["TotalCharges"].fillna(median_total_charges)
+    # Impute missing TotalCharges with 0 since missing values correspond to customers with no tenure
+    df["TotalCharges"] = df["TotalCharges"].fillna(0)
 
     # Save cleaned dataset
     output_path = PROCESSED_DATA_PATH / output_filename
