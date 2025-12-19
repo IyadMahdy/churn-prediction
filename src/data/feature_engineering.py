@@ -62,7 +62,8 @@ def add_num_active_services(df: pd.DataFrame) -> pd.DataFrame:
 
 def add_is_month_to_month(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Add a binary feature indicating whether the customer is on a month-to-month contract.
+    Add a binary feature indicating
+    whether the customer is on a month-to-month contract.
 
     Customers without long-term contracts typically exhibit higher churn risk
     due to lower commitment.
