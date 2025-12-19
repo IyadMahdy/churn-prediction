@@ -12,37 +12,26 @@ FEATURES_TO_DROP = [
     "gender",
     "Partner",
     "PhoneService",
-
     # Individual service subscription indicators (redundant)
     "MultipleLines_Yes",
     "MultipleLines_No phone service",
-
     "StreamingTV_Yes",
     "StreamingTV_No internet service",
-
     "StreamingMovies_Yes",
     "StreamingMovies_No internet service",
-
     "OnlineBackup_Yes",
     "OnlineBackup_No internet service",
-    
-
     "DeviceProtection_Yes",
     "DeviceProtection_No internet service",
-
     "OnlineSecurity_No internet service",
     "TechSupport_No internet service",
-
     # Contract-related redundant features
     "Contract_One year",
     "Contract_Two year",
-
     # Tenure redundancy
     "tenure_bin",
-
     # Derived billing feature
     "TotalCharges",
-
     # Payment method features
     "PaymentMethod_Credit card (automatic)",
     "PaymentMethod_Mailed check",
