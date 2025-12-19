@@ -77,9 +77,7 @@ def add_is_month_to_month(df: pd.DataFrame) -> pd.DataFrame:
 
     contract_cols = [col for col in df.columns if col.startswith("Contract_")]
 
-    df["is_month_to_month"] = (
-        df[contract_cols].sum(axis=1) == 0
-    ).astype(int)
+    df["is_month_to_month"] = (df[contract_cols].sum(axis=1) == 0).astype(int)
 
     return df
 
@@ -104,9 +102,7 @@ def add_is_auto_payment(df: pd.DataFrame) -> pd.DataFrame:
         "PaymentMethod_Mailed check",
     ]
 
-    df["is_auto_payment"] = (
-        df[not_auto].sum(axis=1) == 0
-    ).astype(int)
+    df["is_auto_payment"] = (df[not_auto].sum(axis=1) == 0).astype(int)
 
     return df
 
