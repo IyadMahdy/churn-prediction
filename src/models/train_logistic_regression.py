@@ -98,7 +98,7 @@ def train_logistic_regression_baseline(
 
 if __name__ == "__main__":
     results = train_logistic_regression_baseline(
-        input_filename="telco_customer_churn_encoded.csv",
+        input_filename="telco_customer_churn_selected_features.csv",
         model_filename="baseline.joblib",
         scaler_filename="baseline_scaler.joblib",
         metrics_filename="baseline_metrics.json",
