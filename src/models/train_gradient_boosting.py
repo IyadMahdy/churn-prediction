@@ -3,11 +3,8 @@ import joblib
 import pandas as pd
 
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.metrics import (
-    classification_report,
-    confusion_matrix,
-    roc_auc_score,
-)
+from src.models.evaluation import evaluate_model
+
 from sklearn.model_selection import train_test_split
 from sklearn.utils.class_weight import compute_sample_weight
 
@@ -60,14 +57,7 @@ def train_gradient_boosting(
         sample_weight=sample_weight,
     )
 
-    y_pred = model.predict(X_val)
-    y_proba = model.predict_proba(X_val)[:, 1]
-
-    metrics = {
-        "confusion_matrix": confusion_matrix(y_val, y_pred).tolist(),
-        "classification_report": classification_report(y_val, y_pred, output_dict=True),
-        "roc_auc": roc_auc_score(y_val, y_proba),
-    }
+    metrics = evaluate_model(model, X_val, y_val)
 
     model_dir = MODELS_DIR / "gradient_boosting"
     model_dir.mkdir(parents=True, exist_ok=True)
