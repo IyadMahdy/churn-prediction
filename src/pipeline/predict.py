@@ -1,6 +1,7 @@
 import argparse
 import joblib
 import pandas as pd
+from datetime import datetime
 
 from src.utils.config import PROCESSED_DATA_PATH, MODELS_DIR
 
@@ -9,7 +10,7 @@ def run_prediction(
     model_name: str,
     model_filename: str,
     input_filename: str,
-    output_filename: str = "predictions.csv",
+    output_filename: str | None = None,
 ) -> pd.DataFrame:
     """
     Run prediction for a trained model on the given dataset.
@@ -49,6 +50,10 @@ def run_prediction(
     )
 
     # Save predictions
+    if output_filename is None:
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        output_filename = f"predictions_{timestamp}.csv"
+
     output_path = MODELS_DIR / model_name / output_filename
     predictions_df.to_csv(output_path, index=False)
 
@@ -62,9 +67,9 @@ if __name__ == "__main__":
     parser.add_argument("--model-file", required=True)
     parser.add_argument("--data-file", required=True)
     parser.add_argument(
-        "--output-file",
-        default="predictions.csv",
-        help="Name of the output predictions CSV file",
+    "--output-file",
+    default=None,
+    help="Optional output file name (defaults to timestamped file)",
     )
 
     args = parser.parse_args()
