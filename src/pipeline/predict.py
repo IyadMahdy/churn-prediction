@@ -67,9 +67,9 @@ if __name__ == "__main__":
     parser.add_argument("--model-file", required=True)
     parser.add_argument("--data-file", required=True)
     parser.add_argument(
-    "--output-file",
-    default=None,
-    help="Optional output file name (defaults to timestamped file)",
+        "--output-file",
+        default=None,
+        help="Optional output file name (defaults to timestamped file)",
     )
 
     args = parser.parse_args()
