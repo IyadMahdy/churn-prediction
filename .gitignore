@@ -216,3 +216,7 @@ models/trained/*
 !data/processed/.gitkeep
 !data/external/.gitkeep
 !models/trained/.gitkeep
+
+# Model artifacts (tracked later with DVC)
+models/**/*.joblib
+models/**/*metrics*.json

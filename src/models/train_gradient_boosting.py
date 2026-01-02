@@ -11,9 +11,7 @@ from sklearn.utils.class_weight import compute_sample_weight
 from src.utils.config import PROCESSED_DATA_PATH, MODELS_DIR
 
 
-def train_gradient_boosting(
-    input_filename: str,
-) -> dict:
+def train_gradient_boosting(input_filename: str, metrics_filename: str) -> dict:
     """
     Train a tuned Gradient Boosting model using fixed hyperparameters
     identified during prior notebook-based tuning.
@@ -65,6 +63,9 @@ def train_gradient_boosting(
     joblib.dump(model, model_dir / "gradient_boosting_tuned.joblib")
 
     with open(model_dir / "gradient_boosting_metrics.json", "w") as f:
+        json.dump(metrics, f, indent=4)
+
+    with open(model_dir / metrics_filename, "w") as f:
         json.dump(metrics, f, indent=4)
 
     return metrics
