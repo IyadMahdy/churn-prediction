@@ -3,13 +3,10 @@ import joblib
 import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import (
-    classification_report,
-    confusion_matrix,
-    roc_auc_score,
-)
+
 from sklearn.model_selection import train_test_split
 
+from src.models.evaluation import evaluate_model
 from src.utils.config import PROCESSED_DATA_PATH, MODELS_DIR
 
 
@@ -59,14 +56,7 @@ def train_random_forest_baseline(
     model.fit(X_train, y_train)
 
     # Evaluation
-    y_pred = model.predict(X_val)
-    y_proba = model.predict_proba(X_val)[:, 1]
-
-    metrics = {
-        "confusion_matrix": confusion_matrix(y_val, y_pred).tolist(),
-        "classification_report": classification_report(y_val, y_pred, output_dict=True),
-        "roc_auc": roc_auc_score(y_val, y_proba),
-    }
+    metrics = evaluate_model(model, X_val, y_val)
 
     # Save artifacts
     MODELS_DIR.mkdir(parents=True, exist_ok=True)
