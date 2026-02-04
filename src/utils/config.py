@@ -9,4 +9,3 @@ EXTERNAL_DATA_PATH = DATA_DIR / "external"
 
 MODELS_DIR = PROJECT_ROOT / "models"
 REPORTS_DIR = PROJECT_ROOT / "reports"
-
