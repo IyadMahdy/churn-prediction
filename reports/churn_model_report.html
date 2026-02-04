@@ -1,0 +1,144 @@
+
+    <html>
+    <head>
+        <title>Customer Churn Prediction Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 40px;
+                background-color: #f9f9f9;
+            }
+            h1, h2 {
+                color: #2c3e50;
+            }
+            .section {
+                background: white;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            }
+            table {
+                border-collapse: collapse;
+                width: 50%;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Customer Churn Prediction Report</h1>
+        <p><strong>Date:</strong> 2026-02-04</p>
+        <p><strong>Selected Model:</strong> Gradient Boosting</p>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <p>
+                This report presents the results of a machine learning model developed
+                to predict customer churn. After evaluating multiple models, Gradient
+                Boosting was selected as the best-performing model based on ROC-AUC
+                and recall for churned customers.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Model Performance</h2>
+            <p><strong>ROC-AUC:</strong> 0.845</p>
+            <p><strong>Precision (Churn):</strong> 0.510</p>
+            <p><strong>Recall (Churn):</strong> 0.805</p>
+
+            <h3>Confusion Matrix</h3>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Predicted No</th>
+                    <th>Predicted Yes</th>
+                </tr>
+                <tr>
+                    <th>Actual No</th>
+                    <td>746</td>
+                    <td>289</td>
+                </tr>
+                <tr>
+                    <th>Actual Yes</th>
+                    <td>73</td>
+                    <td>301</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Key Drivers of Customer Churn</h2>
+            
+        <div style="margin-bottom:15px;">
+            <strong>is_month_to_month</strong><br>
+            <small>Customers on month-to-month contracts exhibit substantially higher churn risk due to lower contractual commitment compared to customers on long-term contracts.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>tenure</strong><br>
+            <small>Customers with shorter tenure are significantly more likely to churn. This indicates that churn risk is highest during the early stages of the customer lifecycle, highlighting the importance of onboarding and early engagement strategies.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>InternetService_Fiber optic</strong><br>
+            <small>Fiber optic customers demonstrate higher churn rates, potentially driven by higher service costs or elevated expectations regarding service quality.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>MonthlyCharges</strong><br>
+            <small>Higher monthly charges are associated with increased churn risk, suggesting price sensitivity among customers and potential dissatisfaction with perceived value.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>PaymentMethod_Electronic check</strong><br>
+            <small>Customers using electronic check payment methods exhibit higher churn rates, which may reflect payment friction or lower long-term commitment.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>InternetService_No</strong><br>
+            <small>Customers without internet service tend to churn less frequently, which may reflect lower service complexity and fewer unmet expectations.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>OnlineSecurity_Yes</strong><br>
+            <small>Subscription to online security services is associated with lower churn risk, suggesting that customers using protective services are more engaged and reliant on the provider.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>PaperlessBilling</strong><br>
+            <small>Paperless billing is associated with higher churn rates, potentially reflecting a more price-sensitive or digitally transient customer segment.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>TechSupport_Yes</strong><br>
+            <small>Customers with technical support subscriptions are less likely to churn, emphasizing the role of customer support in retention and satisfaction.</small>
+        </div>
+        
+        <div style="margin-bottom:15px;">
+            <strong>num_active_services</strong><br>
+            <small>Customers subscribed to a higher number of additional services tend to churn less, indicating greater product dependency and higher switching costs.</small>
+        </div>
+        
+        </div>
+
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>
+                The selected model demonstrates strong predictive performance and is
+                suitable for identifying customers at high risk of churn. The results
+                can support proactive retention strategies and targeted interventions.
+            </p>
+        </div>
+
+    </body>
+    </html>
+    
