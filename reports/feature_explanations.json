@@ -1,0 +1,27 @@
+{
+  "tenure": "Customers with shorter tenure are significantly more likely to churn. This indicates that churn risk is highest during the early stages of the customer lifecycle, highlighting the importance of onboarding and early engagement strategies.",
+
+  "is_month_to_month": "Customers on month-to-month contracts exhibit substantially higher churn risk due to lower contractual commitment compared to customers on long-term contracts.",
+
+  "MonthlyCharges": "Higher monthly charges are associated with increased churn risk, suggesting price sensitivity among customers and potential dissatisfaction with perceived value.",
+
+  "InternetService_Fiber optic": "Fiber optic customers demonstrate higher churn rates, potentially driven by higher service costs or elevated expectations regarding service quality.",
+
+  "InternetService_No": "Customers without internet service tend to churn less frequently, which may reflect lower service complexity and fewer unmet expectations.",
+
+  "num_active_services": "Customers subscribed to a higher number of additional services tend to churn less, indicating greater product dependency and higher switching costs.",
+
+  "OnlineSecurity_Yes": "Subscription to online security services is associated with lower churn risk, suggesting that customers using protective services are more engaged and reliant on the provider.",
+
+  "TechSupport_Yes": "Customers with technical support subscriptions are less likely to churn, emphasizing the role of customer support in retention and satisfaction.",
+
+  "PaymentMethod_Electronic check": "Customers using electronic check payment methods exhibit higher churn rates, which may reflect payment friction or lower long-term commitment.",
+
+  "PaperlessBilling": "Paperless billing is associated with higher churn rates, potentially reflecting a more price-sensitive or digitally transient customer segment.",
+
+  "Dependents": "Customers without dependents tend to churn more frequently, suggesting that household ties may contribute to longer customer retention.",
+
+  "SeniorCitizen": "Senior customers exhibit higher churn rates compared to non-senior customers, indicating the need for tailored service offerings and support for this segment.",
+
+  "is_auto_payment": "Customers enrolled in automatic payment methods demonstrate lower churn risk, likely due to reduced payment friction and stronger habitual engagement."
+}
