@@ -48,7 +48,7 @@ def train_catboost(
         auto_class_weights="Balanced",
         random_seed=42,
         logging_level="Silent",
-        allow_writing_files=False
+        allow_writing_files=False,
     )
 
     model.fit(X_train, y_train)
