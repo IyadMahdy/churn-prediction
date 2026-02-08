@@ -3,9 +3,7 @@ import pandas as pd
 from src.utils.config import PROCESSED_DATA_PATH
 
 
-# ---------------------------------------------------------------------
 # Feature Selection Configuration
-# ---------------------------------------------------------------------
 
 FEATURES_TO_DROP = [
     # Demographic and basic service indicators
